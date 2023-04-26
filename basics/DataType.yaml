@@ -1,0 +1,90 @@
+# key-value pairs
+# comments
+# objects
+# lists
+# booleans
+# multi-line strings
+# env variable
+# YAML syntax
+
+
+# now 
+# key-value pairs
+app : user-auth
+app : "user-auth"
+app : 'user-auth'
+port : 8080
+version : 2.0 
+
+# this is a comment
+
+# objects
+
+microservices:
+ app : user-auth
+ port : 9000
+ version : 1.9
+
+# or 
+
+microservices:
+    app : user-auth
+    port : 9000
+    version : 1.9
+
+# idea is indentation should be same
+
+# validate yaml or yml files first
+# Link :  http://www.yamllint.com/
+# link : https://www.json2yaml.com/
+
+# list of microservices
+microservices:
+ - app : user-auth
+   port : 9191
+   verion : 2.3
+ - app : shopping-cart
+   port : 8787
+   version : 3.0
+ - app : payment
+   port : 8789
+   version : 1.0
+
+
+# boolean values
+microservices:
+  app : user-auth
+  port : 9191
+  verion : 2.3
+
+  isDeployed : on
+  isDeployed : true
+  isDeployed : yes
+  # 3 pairs of boolean value
+  isRunning : off
+  isRunning : false
+  isRunning : no
+
+# just list 
+
+microservices :
+ - user-auth
+ - shopping cart
+ - payment
+
+# list of list
+microservices:
+ app : user-auth
+ port : 8080
+ version : 
+ - 1.9
+ - 2.0
+ - 3.0 
+
+# Dont confuse with allignment ...as long as they are constant
+
+# primitives
+microservices:
+ app : "user-auth"
+ port : 8080
+ version : [1.9, 2.0, 3.0]

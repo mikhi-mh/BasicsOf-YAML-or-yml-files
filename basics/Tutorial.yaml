@@ -1,0 +1,31 @@
+# this is one line comment
+# this is game of only space , indentation
+# and line separation
+
+# Made for pupose : human readable and underastandable
+
+# this is key value pair
+
+app : user-authentication   # string not necesarily double quotes
+# any line is right
+app : "user-authentication"
+app : 'user-authentication'
+
+port : 9000
+verison : 1.1
+
+# either use this key value pair
+app : user-auth
+port : 8080
+version : 1.1 
+
+# u can code this 
+
+# either use this using object like
+# we can make it object
+miroserviece:
+ app : user-auth
+ port : 8080
+ version : 1.1
+
+# onlineyamltool.com

@@ -1,0 +1,10 @@
+apiVersion : v1
+kind : ConfigMap
+metadata : 
+  name : mosquito-config-file
+data : 
+  maosquito.config : |
+    log_desr=t stdout
+    log_type all
+    log_timestamp true
+    listner 9001

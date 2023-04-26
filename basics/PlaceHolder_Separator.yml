@@ -1,0 +1,45 @@
+# placeholder
+# in helm dash board
+# this is also used in ansible
+
+apiVersion : v1
+kind : Service
+metadata : 
+  name : {{ .Values.service.name }}
+  # this value will be replaced ---> { .Values.service.name }
+spec : 
+ selector : 
+    app : {{ .Values.service.app }}
+  ports : 
+    - protocol : TCP
+      port : {{ .Values.service.port }}
+      targetPort : {{ .Values.service.targetport }}
+
+
+# we can separate out multiple yaml file inside one using ---
+# component separator
+# in mark-down we use --- to break 
+# used in kubernetes---very helpful
+
+# thsi is
+apiVersion : v1
+kind : ConfigMap
+metadata : 
+  name : mosquito-config-file
+data : 
+  maosquito.config : |
+    log_desr=t stdout
+    log_type all
+    log_timestamp true
+    listner 9001
+
+--- 
+
+microservices:
+    app : user-auth
+    port : 9000
+    version : 1.9
+
+---
+# you can setup either via yaml or via json 
+# Examples on the web also mostly in YAML

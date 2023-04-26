@@ -1,0 +1,41 @@
+# this is pod configuration
+# a real kubernetes confguration example
+apiVersion : v1
+kind : Pod
+metadata : 
+  name : nginx
+  labels : 
+    app : nginx
+spec : 
+  containers : 
+  - name : nginx-container
+    image: nginx
+    ports : 
+    - containerPort : 80
+    volumeMounts : 
+    - name : ngnix-vol
+      mouthPath : /usr/nginx/html
+  - name : sidecar-container
+    image : curlimages/curl
+    command : ["/bin/sh"] 
+    # alternate command to list
+    args : ["-c", "echo hello from sidecar container: sleep 300"]
+
+
+# Multiline string
+
+# before
+multilineString : "this is \nmultiline \nstring" 
+
+# after
+multiLineString : |
+  string
+  this is multi
+  line string ans this is next line
+  
+# interpret multi-line in a single
+
+multiLine : > 
+  this line single line
+  this should be also in single line
+  and other stuff also
